@@ -15,19 +15,36 @@
 //     println!("The value of number is: {number}");
 // }
 
+// fn main() {
+//     let suma = 6 + 10;
+//     println!("la suma es {suma}");
+
+//     let diferencia = 54.21 - 12.34;
+//     println!("la diferencia es {diferencia}");
+
+//     let producto = 5 * 7;
+//     println!("el producto es {producto}");
+
+//     let division = 120 / 7;
+//     println!("la division es {division}");
+
+//     let resto = 120 % 7;
+//     println!("el resto es {resto}");
+// }
+
+use std::io;
+
 fn main() {
-    let suma = 6 + 10;
-    println!("la suma es {suma}");
+    let arreglo = [1, 2, 3, 4, 5];
 
-    let diferencia = 54.21 - 12.34;
-    println!("la diferencia es {diferencia}");
+    println!("Introduzca una posición del arreglo: ");
+    let mut indice = String::new();
+    io::stdin()
+        .read_line(&mut indice)
+        .expect("Error al leer la entrada");
 
-    let producto = 5 * 7;
-    println!("el producto es {producto}");
+    let indice: usize = indice.trim().parse().expect("Error al parsear el índice");
+    let elemento = arreglo[indice];
 
-    let division = 120 / 7;
-    println!("la division es {division}");
-
-    let resto = 120 % 7;
-    println!("el resto es {resto}");
+    println!("El valor en la posición {indice} es {elemento}");
 }
